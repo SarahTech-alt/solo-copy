@@ -34,7 +34,7 @@ function MapView() {
 
   // On page load get the logs from the database
   useEffect(() => {
-    console.log('component did mount');
+    // console.log('component did mount');
     dispatch({ type: 'FETCH_LOGS' })
   }, [dispatch]);
 

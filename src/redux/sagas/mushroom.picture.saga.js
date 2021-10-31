@@ -4,12 +4,12 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* fetchMushroomPhotos() {
     console.log('in fetch mushroom photos');
 const response = yield axios.get('/api/log/photo');
-yield console.log(response);
+// yield console.log(response);
 yield put({type: 'SET_MUSHROOM_PHOTOS', payload: response.data});
 }
 
 function* fetchLogPhotos(action) {
-    console.log('in fetch selected photo', action.payload);
+    // console.log('in fetch selected photo', action.payload);
     const logId = action.payload;
     const response = yield axios.get(`/api/log/photo/${logId}`);
     yield put({ type: 'SET_LOG_PHOTO', payload: response.data[0]});
@@ -20,13 +20,13 @@ function* postUpdatedPhoto(action) {
     // then calls the get saga function to get
     // the most up to date profile information
     try{
-        console.log('filename in put', action.payload);
+        // console.log('filename in put', action.payload);
         const fileName = {selectedFile: action.payload.logId};
         const selectedPhoto = {logId: action.payload}
         yield axios.put(`api/log/photo/${selectedPhoto}`, fileName);
         yield put({type:'FETCH_MUSHROOM_PHOTOS'})
     } catch (error) {
-        console.log('something went wrong sending edited photo to db', error);  
+        alert('something went wrong sending edited photo to db', error);  
     }
   }
   
@@ -40,14 +40,14 @@ function* postUpdatedPhoto(action) {
         const fileName = encodeURIComponent(selectedFile.name);
         const fileType = encodeURIComponent(resizedFile.type);
         const fileSize = encodeURIComponent(resizedFile.size);
-        console.log('fileName', fileName);
+        // console.log('fileName', fileName);
         const formData = new FormData();
         formData.append('image', resizedFile);
-        console.log('form data', formData);
+        // console.log('form data', formData);
         yield axios.post(`api/log/photo/s3?name=${fileName}&type=${fileType}&size=${fileSize}`, formData);
     } catch (error) {
         
-        console.log('Photo Upload - post request failed', error);
+        alert('Photo Upload - post request failed', error);
     }
   }
   

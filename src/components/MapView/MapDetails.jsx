@@ -8,7 +8,7 @@ function MapDetails({ coord, key }) {
 
   // Google Maps data about each marker
   const onLoad = marker => {
-    console.log('marker: ', marker)
+    // console.log('marker: ', marker)
   }
 
   const dispatch = useDispatch();

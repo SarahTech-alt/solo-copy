@@ -19,7 +19,7 @@ function EditPhoto( { selectedLog, logId } ) {
     const [changePicture, setChangePicture] = useState(false);
 
     const onFileChange = async (event) => {
-        console.log(event);
+        // console.log(event);
         const userFile = event.target.files[0];
         // const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/jpg'];
         // if (acceptedImageTypes.includes(acceptedImageTypes.type)) {
@@ -28,13 +28,13 @@ function EditPhoto( { selectedLog, logId } ) {
         setSelectedFile(userFile);
         setResizedFile(resizedFile);
         setPreview(URL.createObjectURL(resizedFile));
-        console.log(process.env.REACT_APP_AWS_S3_BUCKET);
+        // console.log(process.env.REACT_APP_AWS_S3_BUCKET);
         selectedLog.mushroom_picture_thumb = `https://solospikebucket.s3.us-east-2.amazonaws.com/photos/thumb/${userFile.name}`;
         selectedLog.mushroom_picture_medium = `https://solospikebucket.s3.us-east-2.amazonaws.com/photos/medium/${userFile.name}`;
     }
 
     const sendPictureToServer = () => {
-        console.log('in send picture to server on edit page', selectedFile);
+        // console.log('in send picture to server on edit page', selectedFile);
         dispatch({
             type: 'ADD_MUSHROOM_PHOTO',
             payload: {

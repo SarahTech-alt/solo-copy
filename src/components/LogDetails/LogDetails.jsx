@@ -48,13 +48,13 @@ function LogDetails() {
     };
     // Google Maps data about each marker
     const onLoad = marker => {
-        console.log('marker: ', marker)
+        // console.log('marker: ', marker)
     }
 
     // dispatch selected id to sagas and
     // direct user to edit page
     const editLog = (logId) => {
-        console.log('id from details to send to edit', logId);
+        // console.log('id from details to send to edit', logId);
         history.push(`/edit/${logId}`);
     }
 
@@ -62,7 +62,7 @@ function LogDetails() {
     // send logId that was retried with useParams
     useEffect(() => {
         dispatch({ type: 'SET_SELECTED_LOG', payload: logId });
-        console.log('id to send to photo router in component', logId)
+        // console.log('id to send to photo router in component', logId)
         dispatch({ type: 'SET_SELECTED_MUSHROOM_PHOTO', payload: logId })
     }, [logId]);
 

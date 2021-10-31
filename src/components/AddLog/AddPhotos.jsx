@@ -47,7 +47,7 @@ function AddPhotos() {
     // asynchronous function that
     // updates hooks from user inputted information
     const onFileChange = async (event) => {
-        console.log(event);
+        // console.log(event);
         const userFile = event.target.files[0];
         // const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/jpg'];
         // if (acceptedImageTypes.includes(acceptedImageTypes.type)) {

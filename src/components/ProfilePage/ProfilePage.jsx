@@ -43,7 +43,7 @@ function ProfilePage() {
     // updates hooks from user inputted information
     const onFileChange = async (event) => {
         setShowCurrentPhoto(false);
-        console.log(event);
+        // console.log(event);
         const userFile = event.target.files[0];
         const copyFile = new Blob([userFile], { type: userFile.type });
         const resizedFile = await readAndCompressImage(copyFile, imageConfig);

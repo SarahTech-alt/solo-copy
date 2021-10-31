@@ -58,13 +58,14 @@ function AddLocationTime() {
     useEffect(() => {
         axios.post(`api/mushroom/map/`)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setCurrentLocation(res.data.location)
                 setLocationToSend(res.data.location)
             })
             .catch(
                 error => {
-                    console.log('there was an error posting');
+                    // console.log('there was an error posting');
+                    res.send(error);
                 }
             )
         // dispatch({type:'fetchLocation'})
@@ -80,7 +81,7 @@ function AddLocationTime() {
     const sendLocationData = () => {
         newMushroom.latitude = locationToSend.lat;
         newMushroom.longitude = locationToSend.lng;
-        console.log(newMushroom);
+        // console.log(newMushroom);
         history.push('/description')
     }
 
@@ -89,8 +90,8 @@ function AddLocationTime() {
     // set the location to send variable
     // to the new coordinates
     const getClickData = (value) => {
-        console.log(value.lat());
-        console.log(value.lng());
+        // console.log(value.lat());
+        // console.log(value.lng());
         setLocationToSend({
             lat: value.lat(),
             lng: value.lng()

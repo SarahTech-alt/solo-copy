@@ -23,9 +23,9 @@ function EditLog() {
     // on page load dispatch to selected log saga
     // send logId that was retried with useParams
     useEffect(() => {
-        console.log('process env', process.env)
+        // console.log('process env', process.env)
         dispatch({ type: 'SET_SELECTED_LOG', payload: logId });
-        console.log('log id on page load', logId);
+        // console.log('log id on page load', logId);
         dispatch({ type: 'SET_SELECTED_MUSHROOM_PHOTO', payload: logId })
     }, [logId]);
 
@@ -60,7 +60,7 @@ function EditLog() {
         // The file name seems to be dropped on resize, send both the
         // original and resized files.
         let action;
-        console.log('in send form data to server', logInfo);
+        // console.log('in send form data to server', logInfo);
         dispatch({
             type: 'EDIT_LOG_DETAILS',
             payload: {
@@ -76,7 +76,7 @@ function EditLog() {
 
     // dispatches to delete saga on delete button click
     const deleteLog = () => {
-        console.log('in delete log on component', logId);
+        // console.log('in delete log on component', logId);
         dispatch({ type: 'DELETE_SELECTED_LOG', payload: logId })
         history.push('/history');
     }

@@ -33,7 +33,7 @@ function HomePage() {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_LOGS' });
-    console.log('log id on page load', profile);
+    // console.log('log id on page load', profile);
   }, [dispatch]);
 
   const viewLogDetail = (logId) => {

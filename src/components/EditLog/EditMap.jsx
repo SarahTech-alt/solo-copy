@@ -32,8 +32,8 @@ function EditMap( {selectedLog} ) {
     // set the location to send variable
     // to the new coordinates
     const getClickData = (value) => {
-        console.log(value.lat());
-        console.log(value.lng());
+        // console.log(value.lat());
+        // console.log(value.lng());
         setLocationToSend({
             lat: value.lat(),
             lng: value.lng()
