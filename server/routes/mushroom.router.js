@@ -182,7 +182,7 @@ router.put('/editInfo/:id', rejectUnauthenticated, async (req, res) => {
 
 router.post('/map', rejectUnauthenticated, (req,res) => {
     const googleKey = process.env.GOOGLE__MAPS_API_KEY
-    axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyA5kx2R22QebhjWgNDJLG5_xuFJAg-gcrM`)
+    axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${googleKey}`)
     .then(results => {
         console.log('success in posting to api', results.data);
         res.send(results.data);
