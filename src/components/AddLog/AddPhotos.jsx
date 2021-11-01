@@ -47,7 +47,7 @@ function AddPhotos() {
     // asynchronous function that
     // updates hooks from user inputted information
     const onFileChange = async (event) => {
-        // console.log(event);
+        console.log(event);
         const userFile = event.target.files[0];
         // const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/jpg'];
         // if (acceptedImageTypes.includes(acceptedImageTypes.type)) {
@@ -97,7 +97,7 @@ function AddPhotos() {
                 </Box><br /> */}
                 {/* Show file upload when the user clicks their profile picture
             Allows user to select a file from their local files */}
-                <Box sx={{ mx: "auto", height: 350, width: 350 }}>
+                <Box sx={{ mx: "auto", height: "auto", width: 350 }}>
                     <input type="file" accept="image/*" onChange={onFileChange} /><br />
                     {preview && (
                         <img
